@@ -1,3 +1,5 @@
+// Copyright 2024
+
 #ifndef INCLUDE_TEXTGEN_H_
 #define INCLUDE_TEXTGEN_H_
 

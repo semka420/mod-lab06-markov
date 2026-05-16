@@ -1,6 +1,8 @@
+// Copyright 2024
+
 #include <fstream>
 #include <iostream>
-#include <iterator>
+#include <string>
 #include <vector>
 
 #include "textgen.h"

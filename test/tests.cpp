@@ -1,5 +1,8 @@
+// Copyright 2024
+
 #include <gtest/gtest.h>
 
+#include <string>
 #include <vector>
 
 #include "textgen.h"
@@ -51,9 +54,12 @@ TEST(TextGeneratorTest, TableFormation) {
 TEST(TextGeneratorTest, SingleSuffixSelection) {
     TextGenerator gen;
 
-    std::vector<std::string> suffixes = {"word"};
+    std::vector<std::string> suffixes = {
+        "word"
+    };
 
-    std::string result = gen.RandomSuffix(suffixes);
+    std::string result =
+        gen.RandomSuffix(suffixes);
 
     EXPECT_EQ(result, "word");
 }
@@ -65,7 +71,8 @@ TEST(TextGeneratorTest, MultipleSuffixSelection) {
         "one", "two", "three"
     };
 
-    std::string result = gen.RandomSuffix(suffixes);
+    std::string result =
+        gen.RandomSuffix(suffixes);
 
     EXPECT_TRUE(
         result == "one" ||
@@ -82,7 +89,8 @@ TEST(TextGeneratorTest, GenerateTextNotEmpty) {
 
     gen.Build(words);
 
-    std::string text = gen.Generate(5);
+    std::string text =
+        gen.Generate(5);
 
     EXPECT_FALSE(text.empty());
 }
@@ -90,7 +98,8 @@ TEST(TextGeneratorTest, GenerateTextNotEmpty) {
 TEST(TextGeneratorTest, EmptyGeneration) {
     TextGenerator gen(2);
 
-    std::string text = gen.Generate(5);
+    std::string text =
+        gen.Generate(5);
 
     EXPECT_TRUE(text.empty());
 }
@@ -116,7 +125,8 @@ TEST(TextGeneratorTest, TableNotEmptyAfterBuild) {
 
     gen.Build(words);
 
-    EXPECT_FALSE(gen.GetTable().empty());
+    EXPECT_FALSE(
+        gen.GetTable().empty());
 }
 
 TEST(TextGeneratorTest, GeneratedTextHasWords) {
@@ -128,7 +138,8 @@ TEST(TextGeneratorTest, GeneratedTextHasWords) {
 
     gen.Build(words);
 
-    std::string text = gen.Generate(10);
+    std::string text =
+        gen.Generate(10);
 
     EXPECT_GT(text.size(), 0);
 }
